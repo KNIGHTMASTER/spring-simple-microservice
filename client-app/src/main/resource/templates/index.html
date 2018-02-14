@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/static/bootstrap-theme.min.css}" />
+    <link rel="stylesheet" th:href="@{/static/pivotal.css}"/>
+    <title>spring-microservices: Home</title>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a title="Spring IO" href="http://www.spring.io">
+                        <img th:src="@{/static/spring-trans-dark.png}"  height="50"/>
+                    </a>
+                </div>
+                <div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="http://www.pivotal.io">
+                                <img alt="Pivotal" title="Pivotal" height="20" th:src="@{/static/pivotal-logo-600.png}" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="row">
+
+        <h1>Accounts Web - Home Page</h1>
+
+        <ul>
+            <li><a th:href="@{/accountList}">View Account List</a></li>
+        </ul>
+
+    </div>
+
+</div>
+
+</body>
+</html>

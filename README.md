@@ -1,2 +1,2 @@
 # spring-simple-microservice
-Simple Microservice Example Using Microservices
+Simple Microservices Application Example Using SpringBoot

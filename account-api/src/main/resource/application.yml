@@ -4,6 +4,11 @@ spring:
   application:
     name: account-api
 
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017
+      database: spring-simple-microservice
+
 # Discovery Server Access
 eureka:
     client:

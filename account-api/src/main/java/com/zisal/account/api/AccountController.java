@@ -22,19 +22,22 @@ public class AccountController {
     @Autowired
     private AccountRepository accountRepository;
 
+    @Autowired
+    private AccountConverter accountConverter;
+
     @RequestMapping("/accounts")
-    public Account[] all() {
+    public AccountDTO[] all() {
         LOGGER.info("accounts-server all() invoked");
-        List<Account> accounts = accountRepository.getAllAccounts();
-        LOGGER.info("accounts-server all() found: " + accounts.size());
-        return accounts.toArray(new Account[accounts.size()]);
+        List<AccountDTO> accountDTOs = accountConverter.mapEntitiesToDTO(accountRepository.findAll());
+        LOGGER.info("accounts-server all() found: " + accountDTOs.size());
+        return accountDTOs.toArray(new AccountDTO[accountDTOs.size()]);
     }
 
     @RequestMapping("/accounts/{id}")
-    public Account byId(@PathVariable("id") String id) {
+    public AccountDTO byId(@PathVariable("id") String id) {
         LOGGER.info("accounts-server byId() invoked: " + id);
-        Account account = accountRepository.getAccount(id);
-        LOGGER.info("accounts-server byId() found: " + account);
-        return account;
+        AccountDTO accountDTO = accountConverter.mapEntityToDTO(accountRepository.findByNumber(id));
+        LOGGER.info("accounts-server byId() found: " + accountDTO);
+        return accountDTO;
     }
 }

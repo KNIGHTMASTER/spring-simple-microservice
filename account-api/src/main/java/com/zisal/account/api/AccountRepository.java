@@ -1,16 +1,15 @@
 package com.zisal.account.api;
 
-import java.util.List;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
  * Created on 2/13/18.
  *
  * @author <a href="mailto:fauzi.knightmaster.achmad@gmail.com">Achmad Fauzi</a>
  */
-public interface AccountRepository {
+public interface AccountRepository extends MongoRepository<Account, String> {
 
-    List<Account> getAllAccounts();
-
-    Account getAccount(String number);
+    Account findByNumber(String p_Number);
 
 }

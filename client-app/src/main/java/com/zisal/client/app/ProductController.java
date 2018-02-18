@@ -12,25 +12,20 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author <a href="mailto:fauzi.knightmaster.achmad@gmail.com">Achmad Fauzi</a>
  */
 @Controller
-public class AccountController {
+public class ProductController {
 
     @Autowired
-    private AccountRepository accountRepository;
+    private IProductRepository productRepository;
 
-    @RequestMapping("/")
-    public String home(){
-        return "index";
-    }
-
-    @RequestMapping("/accountList")
+    @RequestMapping("/productList")
     public String accountList(Model model) {
-        model.addAttribute("accounts", accountRepository.getAllAccounts());
-        return "account-list";
+        model.addAttribute("products", productRepository.getAllProducts());
+        return "product-list";
     }
 
-    @RequestMapping("/accountDetails")
+    @RequestMapping("/productDetails")
     public String accountDetails(@RequestParam("number") String id, Model model) {
-        model.addAttribute("account", accountRepository.getAccount(id));
-        return "account-details";
+        model.addAttribute("product", productRepository.getProduct(id));
+        return "product-details";
     }
 }

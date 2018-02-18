@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head lang="en">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.min.css}" />
     <link rel="stylesheet" th:href="@{/static/bootstrap-theme.min.css}" />
     <link rel="stylesheet" th:href="@{/static/pivotal.css}"/>
     <title>spring-microservices: Home</title>
 </head>
-
 <body>
 
 <div class="container">
@@ -16,7 +15,7 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a title="Spring IO" href="http://www.spring.io">
-                        <img th:src="@{/static/spring-trans-dark.png}"  height="50"/>
+                        <img th:src="@{/static/spring-trans-dark.png}" height="50"/>
                     </a>
                 </div>
                 <div>
@@ -30,15 +29,15 @@
                 </div>
             </div>
         </nav>
+        <div style="text-align: right">[ <a th:href="@{/}">Home</a> ]</div>
     </div>
 
     <div class="row">
 
-        <h1>Accounts Web - Home Page</h1>
+        <h1>Product List</h1>
 
-        <ul>
-            <li><a th:href="@{/accountList}">View Account List</a></li>
-            <li><a th:href="@{/productList}">View Product List</a></li>
+        <ul th:each="product: ${products}">
+            <li><a th:href="@{productDetails?number={productId}(productId=${product.id})}" th:text="${product.name}">Product Name</a></li>
         </ul>
 
     </div>

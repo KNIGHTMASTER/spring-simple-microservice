@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head lang="en">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.min.css}" />
     <link rel="stylesheet" th:href="@{/static/bootstrap-theme.min.css}" />
     <link rel="stylesheet" th:href="@{/static/pivotal.css}"/>
     <title>spring-microservices: Home</title>
 </head>
-
 <body>
-
 <div class="container">
     <div class="row">
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a title="Spring IO" href="http://www.spring.io">
-                        <img th:src="@{/static/spring-trans-dark.png}"  height="50"/>
+                    <a title="Spring IO" th:href="@{http://www.spring.io}">
+                        <img th:src="@{/static/spring-trans-dark.png}" height="50"/>
                     </a>
                 </div>
                 <div>
@@ -30,20 +28,37 @@
                 </div>
             </div>
         </nav>
+        <div style="text-align: right">[ <a th:href="@{/}">Home</a>
+            | <a th:href="@{productList}">Products</a> ]</div>
     </div>
 
     <div class="row">
 
-        <h1>Accounts Web - Home Page</h1>
+        <h1>Product Details</h1>
 
-        <ul>
-            <li><a th:href="@{/accountList}">View Account List</a></li>
-            <li><a th:href="@{/productList}">View Product List</a></li>
-        </ul>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3">
+                    Code :
+                </div>
+                <div class="col-sm-9" th:text="${product.code}" />
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    Name:
+                </div>
+                <div class="col-sm-9" th:text="${product.name}"/>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    Remarks :
+                </div>
+                <div class="col-sm-9" th:text="${product.remarks}"/>
+            </div>
+        </div>
 
     </div>
 
 </div>
-
 </body>
 </html>

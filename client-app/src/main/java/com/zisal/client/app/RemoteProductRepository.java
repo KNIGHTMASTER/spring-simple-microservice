@@ -11,19 +11,18 @@ import java.util.List;
  * @author <a href="mailto:fauzi.knightmaster.achmad@gmail.com">Achmad Fauzi</a>
  */
 @Service
-public class RemoteAccountRepository implements AccountRepository {
+public class RemoteProductRepository implements IProductRepository {
 
     @Autowired
-    private IAccountApiClient accountApiClient;
+    private IProductAPIClient productAPIClient;
 
     @Override
-    public List<Account> getAllAccounts() {
-        return accountApiClient.getAllAccounts();
+    public List<ProductDTO> getAllProducts() {
+        return productAPIClient.getAllProducts();
     }
 
     @Override
-    public Account getAccount(String number) {
-        return accountApiClient.getAccount(number);
+    public ProductDTO getProduct(String p_Number) {
+        return productAPIClient.getProduct(p_Number);
     }
-
 }

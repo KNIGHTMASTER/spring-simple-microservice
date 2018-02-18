@@ -16,7 +16,7 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:1111/eureka/
   instance:
-    hostname:localhost
+    hostname: localhost
 
 # HTTP Server (Tomcat) Port
   server:
@@ -26,3 +26,8 @@ eureka:
 error:
   whitelabel:
     enabled:  false
+
+
+logging:
+  level:
+    com.zisal.client.app: DEBUG

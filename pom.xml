@@ -15,6 +15,7 @@
         <module>discovery-server</module>
         <module>account-api</module>
         <module>client-app</module>
+        <module>product-api</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

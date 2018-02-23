@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: gateway-app
+
+server:
+  port: 4444
+
+zuul:
+  prefix:
+  routes:
+    account:
+      path: /account-api/**
+      serviceId: account-api
+      url: http://localhost:2222
+    customer:
+      path: /product-api/**
+      serviceId: product-api
+      url: http://localhost:3333
+    test:
+      path: /test-api/**
+      serviceId: test-api
+      url: http://localhost:5555
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+    registerWithEureka: true
+    fetchRegistry: true
+
+info:
+  app:
+    name: Gateway Application
+    description: Zuul Gateway Application
+    version: 1.0.0

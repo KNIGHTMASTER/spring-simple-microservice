@@ -33,3 +33,9 @@ server:
 error:
   whitelabel:
     enabled: false
+
+info:
+  app:
+    name: Product API Application
+    description: Product API Application
+    version: 1.0.0

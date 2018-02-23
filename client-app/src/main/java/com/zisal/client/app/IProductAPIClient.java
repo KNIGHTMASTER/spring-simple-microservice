@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author <a href="mailto:fauzi.knightmaster.achmad@gmail.com">Achmad Fauzi</a>
  */
-@FeignClient(name = "product-api" , fallback = IProductAPIClientFallBack.class)
+@FeignClient(name = "product-api" , fallback = ProductAPIClientFallBack.class/*, fallbackFactory = ProductAPIClientFallBackFactory.class*/)
 public interface IProductAPIClient {
 
     @GetMapping("/products")

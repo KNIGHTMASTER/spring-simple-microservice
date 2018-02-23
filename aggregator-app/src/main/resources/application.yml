@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: aggregator-app
+  cloud:
+    config:
+      uri: http://localhost:9090
+
+server:
+  port: 8082
+
+eureka:
+  instance:
+    metadata-map:
+      management.port: 8081
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+    registerWithEureka: true
+    fetchRegistry: true
+
+turbine:
+  aggregator:
+    clusterConfig: account-api, app-client
+  appConfig: account-api, app-client
+
+
+info:
+  app:
+    name: Aggregator Application
+    description: Aggregator Turbine Application
+    version: 1.0.0

@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: hystrix-dashboard
+  config:
+      uri: http://localhost:9090
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+
+server:
+  port: 8081
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+    registerWithEureka: true
+    fetchRegistry: true
+
+
+#turbine:
+#  aggregator:
+#    clusterConfig: app-client
+#  appConfig: app-client
+
+info:
+  app:
+    name: Hystrict Dashboard Application
+    description: Monitoring Circuit Breaker Application
+    version: 1.0.0

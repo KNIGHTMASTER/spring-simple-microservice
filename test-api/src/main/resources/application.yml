@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: test-api
+
+server:
+  port: 5555
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+    registerWithEureka: true
+    fetchRegistry: true
+
+info:
+  app:
+    name: Test Api Application
+    description: Test Api Application
+    version: 1.0.0

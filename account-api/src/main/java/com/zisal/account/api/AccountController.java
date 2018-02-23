@@ -1,5 +1,6 @@
 package com.zisal.account.api;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,7 @@ public class AccountController {
     @Autowired
     private AccountConverter accountConverter;
 
+    @HystrixCommand(groupKey = "account-api", fallbackMethod = "allFallBack")
     @RequestMapping("/accounts")
     public AccountDTO[] all() {
         LOGGER.info("accounts-server all() invoked");
@@ -39,5 +41,10 @@ public class AccountController {
         AccountDTO accountDTO = accountConverter.mapEntityToDTO(accountRepository.findByNumber(id));
         LOGGER.info("accounts-server byId() found: " + accountDTO);
         return accountDTO;
+    }
+
+    public AccountDTO[] allFallBack() {
+        LOGGER.info("accounts-server all() failed");
+        return new AccountDTO[0];
     }
 }

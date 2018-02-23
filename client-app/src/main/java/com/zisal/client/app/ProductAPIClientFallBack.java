@@ -1,5 +1,7 @@
 package com.zisal.client.app;
 
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,11 +10,23 @@ import java.util.List;
  *
  * @author <a href="mailto:fauzi.knightmaster.achmad@gmail.com">Achmad Fauzi</a>
  */
-public class IProductAPIClientFallBack implements IProductAPIClient {
+@Component
+public class ProductAPIClientFallBack implements IProductAPIClient {
+
+   /* private final Throwable cause;
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(ProductAPIClientFallBack.class);
+
+    public ProductAPIClientFallBack(Throwable cause) {
+        this.cause = cause;
+    }*/
 
 
     @Override
     public List<ProductDTO> getAllProducts() {
+        /*if (cause instanceof FeignException && ((FeignException) cause).status() == 404) {
+            LOGGER.info("CAUSE "+cause.getMessage());
+        }*/
         List<ProductDTO> productDTOs = new ArrayList<>();
         ProductDTO productDTO = new ProductDTO();
         productDTO.setId("12345");
@@ -25,6 +39,9 @@ public class IProductAPIClientFallBack implements IProductAPIClient {
 
     @Override
     public ProductDTO getProduct(String p_id) {
+/*        if (cause instanceof FeignException && ((FeignException) cause).status() == 404) {
+            LOGGER.info("CAUSE SINGLE "+cause.getMessage());
+        }*/
         ProductDTO productDTO = new ProductDTO();
         productDTO.setId("12345");
         productDTO.setCode("PRDXXX");

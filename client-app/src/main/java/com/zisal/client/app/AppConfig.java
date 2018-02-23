@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan("id.co.telkomsigma.tma.app.client")
+@ComponentScan("com.zisal.client.app")
 public class AppConfig extends WebMvcConfigurerAdapter {
 
     @Override

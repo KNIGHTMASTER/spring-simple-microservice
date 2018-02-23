@@ -8,7 +8,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.10.RELEASE</version>
+        <version>1.5.9.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>   
     <modules>
@@ -16,12 +16,18 @@
         <module>account-api</module>
         <module>client-app</module>
         <module>product-api</module>
+        <module>gateway-server</module>
+        <module>test-api</module>
+        <module>hystrix-dashboard</module>
+        <module>aggregator-app</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <spring-cloud.version>Edgware.SR2</spring-cloud.version>
+        <!--<spring-cloud.version>Brixton.SR4</spring-cloud.version>-->
+        <!--<spring-cloud.version>Camden.SR7</spring-cloud.version>-->
     </properties>
     
 </project>

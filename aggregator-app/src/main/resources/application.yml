@@ -14,7 +14,7 @@ eureka:
       management.port: 8081
   client:
     serviceUrl:
-      defaultZone: http://localhost:1111/eureka/
+      defaultZone: http://localhost:8761/eureka/
     registerWithEureka: true
     fetchRegistry: true
 

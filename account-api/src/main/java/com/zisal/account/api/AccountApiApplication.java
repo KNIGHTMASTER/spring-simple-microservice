@@ -8,6 +8,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.sleuth.sampler.AlwaysSampler;
+import org.springframework.context.annotation.Bean;
 
 /**
  * Created on 2/13/18.
@@ -55,5 +57,10 @@ public class AccountApiApplication implements CommandLineRunner {
             LOGGER.info(account.toString());
         }
         LOGGER.info("Accounts Have Been Created");
+    }
+
+    @Bean
+    AlwaysSampler alwaysSampler() {
+        return new AlwaysSampler();
     }
 }

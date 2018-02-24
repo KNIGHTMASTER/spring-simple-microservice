@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
+import org.springframework.cloud.sleuth.sampler.AlwaysSampler;
+import org.springframework.context.annotation.Bean;
 
 /**
  * Created on 2/13/18.
@@ -21,10 +23,8 @@ public class AppClient {
         SpringApplication.run(AppClient.class, args);
     }
 
-    /*@Bean
-    @LoadBalanced
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-    }*/
-
+    @Bean
+    AlwaysSampler alwaysSampler() {
+        return new AlwaysSampler();
+    }
 }

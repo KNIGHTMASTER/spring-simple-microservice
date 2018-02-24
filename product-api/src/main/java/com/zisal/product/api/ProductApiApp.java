@@ -7,6 +7,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.sleuth.sampler.AlwaysSampler;
+import org.springframework.context.annotation.Bean;
 
 /**
  * Created on 2/18/18.
@@ -54,5 +56,10 @@ public class ProductApiApp implements CommandLineRunner {
         productRepository.save(product3);
 
         LOGGER.info("Finished Initializing Product Data");
+    }
+
+    @Bean
+    AlwaysSampler alwaysSampler() {
+        return new AlwaysSampler();
     }
 }

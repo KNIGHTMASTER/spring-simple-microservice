@@ -1,0 +1,43 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS / Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+RemoteSystemsTempFiles/
+Servers/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+### Target List ###
+account-api/target
+admin-client/target
+aggregator-app/target
+client-app/target
+config-server/target
+discovery-server/target
+gateway-server/target
+hystrix-dashboard/target
+product-api/target
+test-api/target
+zipkin-server/target
+
+
+### Miscellaneous ###
+.metadata

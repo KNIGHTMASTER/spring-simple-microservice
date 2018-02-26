@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: admin-server
+  boot:
+    admin:
+      url: http://localhost:8989
+      username: ${security.user.name}
+      password: ${security.user.password}
+
+    #mail notifications 1
+    notify:
+      mail:
+        to: jejezisal@gmail.com
+
+      #configs to give secured server info
+      client:
+        metadata:
+          user:
+            name: ${security.user.name}
+            password: ${security.user.password}
+
+    #hipchat notifications
+#    notify:
+#      hipchat:
+#        auth-token: <generated_token>
+#        room-id: <room-id>
+#        url: https://youcompany.hipchat.com/v2/
+
+  #mail notifications 2
+  mail:
+    host: smtp.gmail.com
+    username: antikepet@gmail.com
+    password: kacangijo123
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+security:
+  user:
+    name: admin
+    password: password
+
+server:
+  port: 8989
+
+

@@ -1,0 +1,54 @@
+# Service registers under this name
+# Control the InternalResourceViewResolver:
+spring:
+  application:
+    name: app-client
+  zipkin:
+    baseUrl: http://zipkin-server:9411
+  sleuth:
+    sampler:
+      percentage: 1.0
+
+  mvc:
+    view:
+      prefix: /templates/
+      suffix: .html
+
+# Discovery Server Access
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+
+# HTTP Server (Tomcat) Port
+  server:
+    port: 8080
+
+# Disable Spring Boot's "Whitelabel" default error page, so we can use our own
+error:
+  whitelabel:
+    enabled:  false
+
+
+#FEIGN
+logging:
+  level:
+    com.zisal.client.app: DEBUG
+feign:
+  hystrix:
+    enabled: true
+ribbon:
+  eureka:
+    enabled: true
+
+info:
+  app:
+    name: Client Application
+    description: Client Application
+    version: 1.0.0

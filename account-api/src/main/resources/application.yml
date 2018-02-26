@@ -31,11 +31,12 @@ error:
 hystrix:
   enabled: true
 
+management:
+  security:
+    enabled: false
+
 info:
   app:
     name: Account API Application
     description: Account API Application
     version: 1.0.0
-
-mail:
-  url : http://yahoo.com

@@ -29,7 +29,7 @@ public class AccountController {
     @Autowired
     private AccountConverter accountConverter;
 
-    @Value("${mail.url}")
+    @Value("${mailurl: Default mail.google.com}")
     private String emailUrl;
 
     @HystrixCommand(groupKey = "account-api", fallbackMethod = "allFallBack")

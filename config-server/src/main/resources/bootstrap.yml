@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+#          uri: ${HOME}/Workspace/RND/spring-simple-microservice
+          uri: https://github.com/KNIGHTMASTER/spring-simple-microservice
+          searchPaths: configurations

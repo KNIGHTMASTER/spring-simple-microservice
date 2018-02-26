@@ -1,0 +1,41 @@
+### Spring properties
+# Service registers under this name
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017
+      database: spring-simple-microservice
+
+# Discovery Server Access
+eureka:
+    client:
+      registerWithEureka: true
+      fetchRegistry: true
+      serviceUrl:
+        defaultZone: http://localhost:8761/eureka/
+#    instance:
+#      leaseRenewalIntervalInSeconds: 1
+#      leaseExpirationDurationInSeconds: 2
+#      metadata-map:
+#        management.port: 8081
+
+# HTTP Server (Tomcat) Port
+server: 
+  port: 2222
+
+# Disable Spring Boot's "Whitelabel" default error page, so we can use our own
+error:
+  whitelabel:
+    enabled: false
+
+hystrix:
+  enabled: true
+
+info:
+  app:
+    name: Account API Application
+    description: Account API Application
+    version: 1.0.0
+
+mail:
+  url : http://yahoo.com

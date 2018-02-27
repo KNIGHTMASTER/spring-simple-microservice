@@ -3,9 +3,11 @@ spring:
     name: admin-server
   boot:
     admin:
-      url: http://localhost:8989
-      username: ${security.user.name}
-      password: ${security.user.password}
+      client:
+        prefer-ip: false
+        url: http://localhost:8989
+        username: ${security.user.name}
+        password: ${security.user.password}
 
     #mail notifications 1
     notify:
@@ -46,5 +48,3 @@ security:
 
 server:
   port: 8989
-
-

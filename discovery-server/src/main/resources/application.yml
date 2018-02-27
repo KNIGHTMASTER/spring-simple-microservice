@@ -5,3 +5,18 @@ eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
+  instance:
+    preferIpAddress: false
+
+spring:
+  boot:
+    admin:
+      url: http://localhost:8989
+      username: admin
+      password: password
+  application:
+    name: discovery-server
+
+management:
+  security:
+    enabled: false

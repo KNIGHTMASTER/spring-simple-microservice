@@ -8,11 +8,15 @@ spring:
   sleuth:
     sampler:
       percentage: 1.0
-
   mvc:
     view:
       prefix: /templates/
       suffix: .html
+  boot:
+    admin:
+      url: http://localhost:8989
+      username: admin
+      password: password
 
 # Discovery Server Access
 eureka:
@@ -52,3 +56,4 @@ info:
     name: Client Application
     description: Client Application
     version: 1.0.0
+

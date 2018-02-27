@@ -3,6 +3,11 @@ spring:
     name: hystrix-dashboard
   config:
       uri: http://localhost:9090
+  boot:
+    admin:
+      url: http://localhost:8989
+      username: admin
+      password: password
 
 endpoints:
   restart:

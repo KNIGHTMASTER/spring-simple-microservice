@@ -3,7 +3,11 @@
 spring:
   application:
     name: product-api
-
+  boot:
+    admin:
+      url: http://localhost:8989
+      username: admin
+      password: password
 
   jpa:
     show-sql :  true

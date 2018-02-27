@@ -5,6 +5,11 @@ spring:
     mongodb:
       uri: mongodb://localhost:27017
       database: spring-simple-microservice
+  boot:
+    admin:
+      url: http://localhost:8989
+      username: admin
+      password: password
 
 # Discovery Server Access
 eureka:
